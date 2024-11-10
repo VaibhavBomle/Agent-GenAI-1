@@ -15,6 +15,6 @@ crew = Crew(
 )
 
 # Start the task execution process
-youtube_VIDEO_NAME =  "Realtime Multimodal RAG Usecase Part 3 | MultiVectorRetriever with Langchain | RAG Application" #"You tube video name"
+youtube_VIDEO_NAME =  "You tube video name"
 result = crew.kickoff(inputs = {'topic' : youtube_VIDEO_NAME})
 print(result)
