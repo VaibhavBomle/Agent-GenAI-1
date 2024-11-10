@@ -1,4 +1,7 @@
 from crewai_tools import YoutubeChannelSearchTool
+from youtube_transcript_api import YouTubeTranscriptApi
 
-YouTube_Channel_Name = "YouTube channel name"
-yt_tool = YoutubeChannelSearchTool(youtube_channel_handle = YouTube_Channel_Name)
+# Set up the channel name as before
+YouTube_Channel_Name = "YouTube_Channel_Name"
+yt_tool = YoutubeChannelSearchTool(youtube_channel_handle=YouTube_Channel_Name)
+

@@ -1,21 +1,21 @@
 from crewai import Task
 from tools import yt_tool
-from agents import blog_researcher,blog_writer
+from agents import blog_researcher, blog_writer
 
-# Initialize research task
+# Initialize research task with direct call to `fetch_transcript`
 research = Task(
-    description = "Identify the video {topic}.Get detailed information about the video from the channal video.",
-    expected_output = "A compresensive 3 paragraphs long report based on the {topic} of video content.",
-    tools = [yt_tool],
-    agent = blog_researcher
+    description="Search for the video with {topic} and retrieve the transcript if available.",
+    expected_output="A comprehensive 3-paragraph report based on the video transcript and content.",
+    tools=[yt_tool],
+    agent=blog_researcher
 )
 
-# Initialize write Task
+# Modify `write` task to use the transcript directly, assuming it has been retrieved
 write = Task(
-    description = "get the info from the yutube channel on the topic {topic}.",
-    expected_output='Summarize the info from the youtube channel video on the topic{topic} and create the content for the blog.',
+    description="Use the fetched video transcript to create a blog post on the topic {topic}.",
+    expected_output="Summarize and narrate the information into blog content based on the transcript.",
     tools=[yt_tool],
     agent=blog_writer,
     async_execution=False,
-    output_file='blog-post-new.md'
+    output_file='blog-post.md'
 )
