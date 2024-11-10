@@ -3,7 +3,7 @@ from tools import yt_tool
 from agents import blog_researcher,blog_writer
 
 # Initialize research task
-research_task = Task(
+research = Task(
     description = (
      "Identify the video {topic}."
      "Get detailed information about the video from the channal video."
