@@ -14,9 +14,7 @@ blog_researcher=Agent(
     goal='get the relevant video transcription for the topic {topic} from the provided Yt channel',
     verbose=True,
     memory=True,
-    backstory=(
-       "Expert in understanding videos in AI Data Science , MAchine Learning And GEN AI and providing suggestion" 
-    ),
+    backstory="""Expert in understanding videos in AI Data Science , MAchine Learning And GEN AI and providing suggestion""",
     tools=[yt_tool],
     allow_delegation=True
 )
@@ -29,8 +27,8 @@ blog_writer  = Agent(
     verbose = True,
     memory = True,
     backstory = (
-        "With a flair for simplifying complex topics, you craft"
-        "engaging narratives that captivate and educate, bringing new"
+        "With a flair for simplifying complex topics, you craft",
+        "engaging narratives that captivate and educate, bringing new",
         "discoveries to light in an accessible manner."
     ),
     tools=[yt_tool],
